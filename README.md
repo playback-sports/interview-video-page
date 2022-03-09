@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
+## Setup
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Open [http://localhost:3000](http://localhost:3000) to see the app.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+## Overview
 
-To learn more about Next.js, take a look at the following resources:
+This app contains a single root page that displays a video element with a semi-opaque clickable overlay. On page load, the video is paused and muted.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Task #1
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To begin, let’s have the video play when the overlay is clicked.
 
-## Deploy on Vercel
+## Task #2
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Have the video playing? Great! Now let’s show a pause icon and pause the video on clicks while the video is playing.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Task #3
+
+This is cool, but it’s kind of annoying that the overlay is always showing. Let’s have the overlay only show when the user moves their mouse over the video, and auto-hide after 3 seconds.
+
+## Task #4
+
+If we’ve gotten this far, the root page component is getting a bit complex. Let’s pull the video player out into its own standalone component.
+
+## Task #5
+
+Finally, if this were a real user-facing page we might want to collect some data on how long users are watching for. In `pages/api` there’s a file called `watchTime.ts` that defines an endpoint where we can send info about how far a user has progressed in the video. Let’s send an update with the video’s current time every 10 seconds, but only while the video is playing.
